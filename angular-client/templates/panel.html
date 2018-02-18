@@ -1,0 +1,26 @@
+<div class="container"> 
+		Log entries will repeat here
+		<log-items 
+    	ng-repeat="message in $ctrl.messages track by message"
+    	message="message"
+  	/>
+</div>
+
+<div class="container">
+
+	<div class="message"> 
+		Message: <input type="text" name="message" ng-model="$ctrl.message">
+	<br>
+	<button class="btn" ng-click="$ctrl.handleSubmit()">Submit</button>
+	<button class="btn">Clear Log</button>
+
+	</div>
+
+
+	Location: <input type="text" name="location" placeholder="/echo"> 
+	<br>
+	<button class="btn">Connect</button>
+	<button class="btn">Disconnect</button>
+	<br>
+
+</div>

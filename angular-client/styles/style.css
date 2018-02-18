@@ -1,0 +1,28 @@
+body {
+  background: #f1f1f1;
+  text-align: center;
+}
+
+section {
+  background: white;
+  width: 80%;
+  padding: 1em;
+  overflow: auto;
+  min-width: 30em;
+  max-width: 50em;
+  margin: auto;
+}
+
+.container {
+	font-size: 18px;
+  line-height: 1.3em;
+  vertical-align: top;
+  margin-bottom: 1em;
+  border-radius: 0.5em;
+	box-sizing: border-box;
+	background: salmon;
+	border: solid red 1px;
+  height: 200px;
+/*	width: 45%;*/
+	/*display: inline-block;*/
+}

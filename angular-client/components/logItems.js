@@ -1,8 +1,8 @@
 angular.module('app')
 .component('listItem', {
   bindings: {
-    item: '<',
+    message: '<',
   },
   controller: function() {},
-  templateUrl: '/templates/list-item.html'
+  templateUrl: '/templates/logItems.html'
 });
