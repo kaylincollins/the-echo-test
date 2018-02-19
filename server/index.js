@@ -10,7 +10,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
 app.get('/echo', (req, res) => {
-  res.send('Hello')
+  res.send('Connected to the Echo server!');
 });
 
 app.post('/echo', (req, res) => {

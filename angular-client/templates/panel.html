@@ -10,7 +10,7 @@
 	<div class="message"> 
 		Message: <input type="text" name="message" ng-model="$ctrl.message">
 	<br>
-	<button class="btn" ng-click="$ctrl.handleSubmit()">Submit</button>
+	<button class="btn" ng-click="$ctrl.handleSubmit()" data-ng-disabled="checkStatus()">Submit</button>
 	<button class="btn" ng-click="$ctrl.clearLog()">Clear Log</button>
 
 	</div>
@@ -18,7 +18,7 @@
 
 	Location: <input type="text" name="location" placeholder="/echo"> 
 	<br>
-	<button class="btn">Connect</button>
+	<button class="btn" ng-click="$ctrl.connectToServer()">Connect</button>
 	<button class="btn">Disconnect</button>
 	<br>
 
