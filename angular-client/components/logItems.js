@@ -1,5 +1,5 @@
 angular.module('app')
-.component('listItem', {
+.component('logItems', {
   bindings: {
     message: '<',
   },

@@ -1,14 +1,22 @@
-var express = require('express');
-var bodyParser = require('body-parser');
+const express = require('express');
+const bodyParser = require('body-parser');
 
-var app = express();
+const app = express();
 
 app.use(express.static(__dirname + '/../angular-client'));
 app.use(express.static(__dirname + '/../node_modules'));
 
-app.get('/echo', function (req, res) {
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: true}));
+
+app.get('/echo', (req, res) => {
   res.send('Hello')
 });
+
+app.post('/echo', (req, res) => {
+  var msg = req.body.data;
+  res.send('RECEIVED: ' + msg);
+})
 
 app.listen(3000, function() {
   console.log('listening on port 3000!');

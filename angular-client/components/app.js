@@ -1,7 +1,7 @@
 angular.module('app')
 .controller('AppCtrl', function(echoService) {
   echoService.getAll((data) => {
-    this.items = data;
+    this.messages = data;
     console.log('Data', data)
   });
 })
