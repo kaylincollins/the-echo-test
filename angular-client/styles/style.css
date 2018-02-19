@@ -46,3 +46,10 @@ section {
   position: relative;
   padding-top: 45px;
 }
+
+.btn {
+  background-color: white;
+  font-family: bookman;
+  font-size: 12pt;
+  border-radius: 0.3em;
+}
