@@ -1,7 +1,7 @@
 angular.module('app')
 .service('echoService', function($http) {
-  this.connect = (callback) => {
-    $http.get('/echo')
+  this.connect = (location, callback) => {
+    $http.get(location)
     .then(function({data}) {
       if(callback) {
         callback(data);

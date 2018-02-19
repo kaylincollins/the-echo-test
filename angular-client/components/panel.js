@@ -35,8 +35,11 @@ angular.module('app')
     this.connectToServer = () => {
       if (this.status === 'connected') {
         return
+      } else if (this.location !== '/echo') {
+        this.messages = this.messages || [];
+        this.messages.push('Error! Unknown location');
       } else {
-        echoService.connect((data) => {
+        echoService.connect(this.location, (data) => {
           this.messages = this.messages || [];
           this.messages.push(data);
           this.status = 'connected';
@@ -47,7 +50,8 @@ angular.module('app')
   .component('panel', {
     bindings: {
       messages: '<',
-      status: '<'
+      status: '<',
+      location: '<'
     },
     controller: 'PanelCtrl',
     templateUrl: '/templates/panel.html'
