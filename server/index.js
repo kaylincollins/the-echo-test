@@ -15,8 +15,13 @@ app.get('/echo', (req, res) => {
 
 app.post('/echo', (req, res) => {
   var msg = req.body.data;
-  res.send('RECEIVED: ' + msg);
-})
+  //Only respond if there is a message body
+  if (msg === '') {
+    res.end(); 
+  } else {
+    res.send('RECEIVED: ' + msg);
+  }
+});
 
 app.listen(3000, function() {
   console.log('listening on port 3000!');
