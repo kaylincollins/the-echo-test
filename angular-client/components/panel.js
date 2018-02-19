@@ -8,6 +8,15 @@ angular.module('app')
       }
     },
 
+    this.disconnect = () => {
+      if (this.status === 'connected') {
+        this.status = 'Disconnected';
+        this.messages.push(this.status);
+      } else {
+        return;
+      }
+    },
+
     this.handleSubmit = () => {
       this.messages = this.messages || [];
       this.messages.push('SENT: ' + this.message);
