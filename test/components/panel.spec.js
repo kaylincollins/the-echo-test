@@ -13,15 +13,32 @@ describe('Component: panel', function () {
   }));
 
   var controller;
-  beforeEach(inject(function($controller) {
-    controller = element.controller('PanelCtrl');
-
+  var scope;
+  beforeEach(inject(function($rootScope, $componentController){
+    scope = $rootScope.$new();
+    controller = $componentController('panel', {$scope: scope});
   }));
- 
-  // it('should have a disconnect function on the scope', function() {
-  //   expect(controller.disconnect).toBeDefined;
-  //   expect(controller.disconnect).to.be.a('function');
-  // });
+   
+  it('should have a disconnect function', function() {
+    expect(controller.disconnect).toBeDefined();
+    // console.log(controller.status)
+    // expect(controller.disconnect).toBe('function');
+  });
 
+  it('should have a handleSubmit function', function() {
+    expect(controller.handleSubmit).toBeDefined();
+
+  });
+  
+  it('should have a clearLog function', function() {
+    expect(controller.clearLog).toBeDefined();
+    // expect(controller.clearLog()).toBe
+
+  });
+
+  it('should have a connectToServer function', function() {
+    expect(controller.connectToServer).toBeDefined();
+
+  });
 
 });
