@@ -1,18 +1,30 @@
 
 describe('echo service', function() {
-  // // 1. Load the module
-  // var echoService;
-  
-  // beforeEach(module('app'));
-  
-  // // beforeEach(module('templates'));
-  // beforeEach(inject(function(echo) {
-  //   echoService = echo;
-  // }));
+  var mock, notify;
+  beforeEach(module('app'));
+  beforeEach(function() {
+    mock = {alert: jasmine.createSpyObj('echoService', [
+        'connect',
+        'postMessage'
+      ])};
 
-  // it('should have a function named connect', function() {
-  //   expect(echoService.connect).to.exist;
-  //   expect(echoService.search).to.be.a('function');
-  // });
-  
+    module(function($provide) {
+      $provide.value('echoService', mock);
+    });
+
+    inject(function($injector) {
+      echo = $injector.get('echoService');
+    });
+  });
+
+  it('should have a connect function', function() {
+    echo.alert.connect();
+    expect(mock.alert.connect).toHaveBeenCalled();
+  });
+
+  it('should have a postMessage function', function() {
+    echo.alert.postMessage();
+    expect(mock.alert.postMessage).toHaveBeenCalled();
+  });
+
 });

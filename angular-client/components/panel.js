@@ -1,5 +1,8 @@
 angular.module('app')
   .controller('PanelCtrl', function($scope, echoService) {
+    this.messages = [];
+    this.status = '';
+
     $scope.checkStatus = () => {
       if (this.status === 'connected') {
         return false; //enable the submit button
@@ -18,7 +21,6 @@ angular.module('app')
     },
 
     this.handleSubmit = () => {
-      this.messages = this.messages || [];
       this.messages.push('SENT: ' + this.message);
 
       echoService.postMessage(this.message, (data) => {
@@ -36,7 +38,6 @@ angular.module('app')
       if (this.status === 'connected') {
         return
       } else if (this.location !== '/echo') {
-        this.messages = this.messages || [];
         this.messages.push('Error! Unknown location');
       } else {
         echoService.connect(this.location, (data) => {

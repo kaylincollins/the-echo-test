@@ -31,9 +31,8 @@ module.exports = function(config) {
         'angular-client/components/*.js',
         'angular-client/templates/*.html',
         'angular-client/services/echo.js',                                 
-        'test/components/app.spec.js',
-        'test/components/logItems.spec.js',
         'test/components/panel.spec.js',
+        'test/services/echo.spec.js'
     ],
 
 
