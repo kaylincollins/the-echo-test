@@ -11,14 +11,6 @@ From the terminal, run the following command:
 
 ## To Test ##
 
-### Front-end ###
-
 From the terminal, run the following command:
 
 `npm test`
-
-### Server ###
-
-From the terminal, run the following command:
-
-`npm test-server`
